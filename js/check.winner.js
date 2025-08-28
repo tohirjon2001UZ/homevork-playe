@@ -2,17 +2,17 @@ import { paper, rock, scissors, lizard, spock } from "./constants.js";
 
 export function checkWinner(ai, player){
     if(ai == player){
-        return "DRAW🤝";
+        return "DRAW";
     }else if (ai == rock && (player == scissors || player == lizard)){
-        return "LOSER🫵";
+        return "AI";
     }else if (ai == scissors && (player == paper || player == lizard) ) {
-        return "LOSER🫵";
+        return "AI";
     }else if (ai == paper && (player == rock || player == spock)){
-        return "LOSER🫵";
+        return "AI";
     }else if (ai == lizard && (player == spock || player == paper)){
-        return "LOSER🫵";
+        return "AI";
     }else if (ai == spock && (player == scissors || player == rock)){
-        return "LOSER🫵";
+        return "AI";
     }else{
         return "YOU WIN🎉";
     }
