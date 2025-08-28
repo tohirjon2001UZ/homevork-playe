@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="h-full" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dondon ziki</title>
+    <link rel="stylesheet" href="./css/output.css" />
+    <link rel="shortcut icon" href="./images/ziki.png" type="image/x-icon" />
+  </head>
+
+  <body
+    class="bg-[radial-gradient(134.34%_134.34%_at_50%_0%,_#1F3757_0%,_#131537_100%)] h-full"
+  >
+    <!-- Count Zone -->
+    <section
+      class="flex justify-center translate-y-[48px] max-sm:translate-y-[30px]"
+      id="countZone"
+    >
+      <div
+        class="flex justify-between w-[700px] h-[150px] rounded-[15px] border-2 text-gray-500 px-[35px] py-[20px] max-sm:w-[90%] max-sm:h-[100px] max-sm:px-4 max-sm:py-2 max-sm:flex-col max-sm:items-center max-sm:gap-4"
+      >
+        <img
+          id="logo"
+          src="./images/tipa-logo.svg"
+          alt="tipa-logo"
+          class="max-sm:w-[100px]"
+        />
+
+        <div
+          class="flex place-items-center flex-col w-[115px] h-[100px] rounded-[8px] border-2 bg-white pt-[15px] max-sm:w-[80px] max-sm:h-[72px] max-sm:pt-[12px]"
+        >
+          <h2 class="font-bold text-xl text-blue-800 max-sm:text-sm">SCORE</h2>
+          <p id="score" class="font-bold text-4xl max-sm:text-2xl">0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Choose Zone -->
+    <section
+      class="flex justify-center py-[100px] max-sm:py-[50px]"
+      id="ChooseZone"
+    >
+      <div
+        class="grid grid-cols-2 grid-rows-2 w-full max-w-[400px] gap-x-20 gap-y-6 bg-no-repeat bg-center bg-[url('../images/triangle.svg')] max-sm:max-w-[300px] max-sm:gap-x-10 max-sm:gap-y-4 max-sm:bg-contain"
+        id="zoneGrid"
+      >
+        <button
+          class="place-items-center rounded-full shadow-drop transition-shadow hover:shadow-hover-shadow max-sm:h-[100px] max-sm:w-[100px] max-sm:mx-auto"
+        >
+          <img
+            width="150px"
+            height="150px"
+            class="hand max-sm:w-[70px] max-sm:h-[70px]"
+            src="./images/paper.svg"
+            alt="paper"
+          />
+        </button>
+
+        <button class="place-items-center max-sm:mx-auto">
+          <img
+            width="150px"
+            height="150px"
+            class="hand max-sm:w-[70px] max-sm:h-[70px]"
+            src="./images/scissors.svg"
+            alt="scissors"
+          />
+        </button>
+
+        <button class="col-start-1 col-end-3 place-items-center max-sm:mx-auto">
+          <img
+            width="150px"
+            height="150px"
+            class="hand max-sm:w-[70px] max-sm:h-[70px]"
+            src="./images/rock.svg"
+            alt="rock"
+          />
+        </button>
+
+        <button class="max-sm:mx-auto">
+          <img
+            width="150px"
+            height="150px"
+            class="hand mode-hard hidden max-sm:w-[70px] max-sm:h-[70px]"
+            src="./images/lizard.svg"
+            alt="lizard"
+          />
+        </button>
+
+        <button class="max-sm:mx-auto">
+          <img
+            width="150px"
+            height="150px"
+            class="hand mode-hard hidden max-sm:w-[70px] max-sm:h-[70px]"
+            src="./images/spock.svg"
+            alt="spock"
+          />
+        </button>
+      </div>
+    </section>
+
+    <!-- Status Zone -->
+    <section id="StatusZone" class="hidden py-[100px] max-sm:py-[50px]">
+      <div
+        class="flex justify-center py-[50px] gap-10 place-items-center max-sm:flex-col max-sm:gap-8"
+      >
+        <!-- Player -->
+        <span class="flex gap-10 flex-col max-sm:items-center">
+          <p
+            class="translate-x-[30px] text-2xl font-semibold tracking-widest max-sm:translate-x-0 max-sm:text-lg"
+          >
+            YOU
+          </p>
+          <img
+            width="220px"
+            height="220px"
+            class="player max-sm:w-[120px] max-sm:h-[120px]"
+            src=""
+            alt=""
+          />
+        </span>
+
+        <div class="flex flex-col place-items-center gap-4">
+          <p
+            class="text-4xl font-bold hidden max-sm:text-xl"
+            id="statusText"
+          ></p>
+          <button
+            id="refreshGameButton"
+            class="btn btn-info text-gray-500 bg-white shadow-none border-white w-[200px] rounded-[8px] hidden max-sm:w-[140px] max-sm:h-[36px] max-sm:text-sm"
+          >
+            PLAY AGAIN
+          </button>
+        </div>
+
+        <!-- Ai -->
+        <span class="flex gap-10 flex-col max-sm:items-center">
+          <p class="text-2xl font-semibold tracking-widest max-sm:text-lg">
+            AI
+          </p>
+          <img
+            width="220px"
+            height="220px"
+            class="ai max-sm:w-[120px] max-sm:h-[120px]"
+            src="./images/Oval.svg"
+            alt="oval"
+          />
+        </span>
+      </div>
+    </section>
+
+    <!-- BUTTONS -->
+    <div>
+      <button
+        class="btn bg-blue-950 border-white rounded-[100px] w-[130px] h-[40px] hover:bg-white hover:text-gray-400 tracking-widest absolute bottom-20 right-5 max-sm:w-[100px] max-sm:h-[36px] max-sm:text-xs"
+        id="modeChanger"
+      >
+        Mode
+      </button>
+      <button
+        class="btn absolute bottom-5 right-5 bg-blue-950 border-white w-[128px] h-[50px] rounded-[10px] tracking-widest hover:bg-white hover:text-gray-400 max-sm:w-[100px] max-sm:h-[36px] max-sm:text-xs"
+        onclick="my_modal_3.showModal()"
+      >
+        RULES
+      </button>
+    </div>
+
+    <!-- MODAL -->
+    <dialog id="my_modal_3" class="modal">
+      <div
+        class="modal-box w-[400px] h-[400px] flex justify-center align-middle flex-col place-items-center max-sm:w-[300px] max-sm:h-[340px]"
+      >
+        <form method="dialog">
+          <button
+            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+          >
+            ✕
+          </button>
+        </form>
+        <h3
+          class="font-bold text-2xl absolute left-5 top-5 text-gray-500 max-sm:text-xl"
+        >
+          RULES
+        </h3>
+        <img
+          id="rules"
+          src="./images/rule-basic.svg"
+          alt="rule-basic"
+          class="max-sm:w-[250px]"
+        />
+      </div>
+    </dialog>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
